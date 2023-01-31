@@ -1,3 +1,7 @@
+body {
+  background-color: #e5e5e5;
+}
+
 .App {
   text-align: center;
 }
@@ -13,17 +17,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -35,4 +28,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+header {
+  padding: 10px;
+}
+
+.HomePageBox {
+  /*border: 2px solid white ;*/
+  position: fixed;
+  width: 65%;
+  height: 65%;
+  top: 30%;
+  left: 17.5%;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.HomeButton {
+  width: 20%;
+  height: 30%;
+  border-radius: 10%;
+  margin: auto;
+  padding: 14px 16px;
+  color: #fff;
+  background-color: red;
+  opacity: 1;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+.HomeButton:hover {
+  transform: scale(1.007);
+  opacity: 0.8;
 }

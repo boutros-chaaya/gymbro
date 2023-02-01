@@ -1,3 +1,14 @@
+:root{
+  --blue: #1053A7;
+  --black: #212121;
+}
+
+
+body {
+  background-color: var(--black);
+  color: white;
+}
+
 .App {
   text-align: center;
 }
@@ -13,17 +24,6 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -36,3 +36,110 @@
     transform: rotate(360deg);
   }
 }
+
+header {
+  padding: 10px;
+}
+
+h2{
+  text-align: left;
+  padding-left: 5%;
+}
+
+/* Home Page */
+
+.HomePageBox {
+  /*border: 2px solid white ;*/
+  position: fixed;
+  width: 65%;
+  height: 65%;
+  top: 30%;
+  left: 17.5%;
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+}
+
+.HomeButton {
+  border-radius: 10%;
+  margin: auto;
+  padding: 50px 40px;
+  color: #fff;
+  background-color: var(--blue);
+  opacity: 1;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+
+button:hover {
+  transform: scale(1.07);
+  opacity: 0.97;
+  border: 1px solid var(--black);
+}
+
+.Button{
+  color: white;
+  background-color: var(--blue);
+  width: 10%;
+  padding: 1%;
+  border: var(--blue);
+  border-radius: 20%;
+}
+
+.TransparentButton{
+  color: var(--blue);
+  border: var(--blue);
+  width: 10%;
+  padding: 1%;
+  border: var(--blue);
+  border-radius: 20%;
+}
+
+/* Workout Page */
+
+.WorkoutBox{
+  top: 13%;
+  left: 20%;
+  position: fixed;
+  text-align: center;
+  width: 60%;
+  height: 80%;
+  /*border: 0.1px solid gray;*/
+  border-radius: 0.8%;
+}
+
+.CreateNewWorkout{
+  background-color: var(--blue);
+  width: 100%;
+  padding: 5% 10%;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 2rem;
+  text-align: left;
+
+}
+
+.PlusIcon{
+  padding-right: 5%;
+}
+
+
+.WorkoutsToDo{
+  width:100%;
+  padding: 5% 0%;
+  display: flex;
+  flex-direction: column;
+}
+
+.Workout{
+  background-color: white;
+  color:#212121;
+  padding: 2%;
+  border-radius: 20px;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+

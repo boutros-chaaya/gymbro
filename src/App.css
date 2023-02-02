@@ -73,8 +73,9 @@ h2{
 
 
 button:hover {
-  transform: scale(1.07);
-  opacity: 0.97;
+  /*transform: scale(1.07);*/
+  cursor: pointer;
+  opacity: 0.9;
   border: 1px solid var(--black);
 }
 

@@ -3,12 +3,17 @@ import React from "react";
 function CreateNewWorkout() {
   return (
     <div>
-      <button className="CreateNewWorkout">
+      <button className="CreateNewWorkout" onClick={OpenWorkouts}>
         <icon className="PlusIcon">+</icon>
         Create New Workout
       </button>
     </div>
   );
+}
+
+function OpenWorkouts() {
+  const CreateWorkoutModal = document.querySelector(".NewWorkout");
+  CreateWorkoutModal.style.display = "block";
 }
 
 function Workout(props) {
@@ -28,9 +33,9 @@ function WorkoutBox() {
     <div className="WorkoutBox">
       <CreateNewWorkout />
       <div className="WorkoutsToDo">
-      <Workout name="Push" desc="Workout Description"/>
-      <Workout name="Push" desc="Easy chill workout"/>
-      <Workout name="Push" desc="some random text"/>
+        <Workout name="Push" desc="Workout Description" />
+        <Workout name="Push" desc="Easy chill workout" />
+        <Workout name="Push" desc="some random text" />
       </div>
     </div>
   );

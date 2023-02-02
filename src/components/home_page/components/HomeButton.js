@@ -2,7 +2,7 @@ import React from "react";
 
 // ref: Button that User sees on home page?
 
-const HomeButton = (props) => {
+const BlueHomeButton = (props) => {
   const btn_name = props.btn_name;
   const link = props.link
   return (
@@ -18,4 +18,4 @@ const HomeButton = (props) => {
   );
 };
 
-export default HomeButton;
+export default BlueHomeButton;

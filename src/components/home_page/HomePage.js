@@ -1,18 +1,17 @@
 import React from "react";
-import Header from "./components/Header.js"
 import WelcomeText from "./components/WelcomeText.js"
-import HomeButton from "./components/HomeButton.js";
+import BlueHomeButton from "./components/HomeButton.js";
+import WhiteHomeButton from "./components/WhiteHomeButton.js";
 
 function HomePage() {
   return (
     <div>
       <div>
-        <Header />
         <WelcomeText />
       </div>
       <div className="HomePageBox">
-        <HomeButton btn_name="Workout" link="/workout" />
-        <HomeButton btn_name="History" link="/history" />
+        <BlueHomeButton btn_name="Workout" link="/workout" />
+        <WhiteHomeButton btn_name="History" link="/history" />
       </div>
     </div>
   );

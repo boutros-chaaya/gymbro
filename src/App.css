@@ -1,8 +1,7 @@
-:root{
-  --blue: #1053A7;
+:root {
+  --blue: #1053a7;
   --black: #212121;
 }
-
 
 body {
   background-color: var(--black);
@@ -41,7 +40,7 @@ header {
   padding: 10px;
 }
 
-h2{
+h2 {
   text-align: left;
   padding-left: 5%;
 }
@@ -71,6 +70,20 @@ h2{
   font-weight: bolder;
 }
 
+.WhiteHomeButton {
+  border-radius: 10%;
+  margin: auto;
+  padding: 50px 40px;
+  color: var(--blue);
+  background-color: #fff;
+  opacity: 1;
+  font-size: 1.5rem;
+  font-weight: bolder;
+}
+
+button{
+  border: none;
+}
 
 button:hover {
   /*transform: scale(1.07);*/
@@ -79,27 +92,29 @@ button:hover {
   border: 1px solid var(--black);
 }
 
-.Button{
+.Button {
   color: white;
   background-color: var(--blue);
-  width: 10%;
-  padding: 1%;
+  width: 13%;
+  height: 100%;
+  padding: 2% 0%;
   border: var(--blue);
-  border-radius: 20%;
+  border-radius: 50px;
 }
 
-.TransparentButton{
+.TransparentButton {
   color: var(--blue);
-  border: var(--blue);
-  width: 10%;
-  padding: 1%;
-  border: var(--blue);
-  border-radius: 20%;
+  
+  width: 13%;
+  height: 100%;
+  padding: 2% 0%;
+  border: 1px solid var(--blue);
+  border-radius: 50px;
 }
 
 /* Workout Page */
 
-.WorkoutBox{
+.WorkoutBox {
   top: 13%;
   left: 20%;
   position: fixed;
@@ -110,7 +125,7 @@ button:hover {
   border-radius: 0.8%;
 }
 
-.CreateNewWorkout{
+.CreateNewWorkout {
   background-color: var(--blue);
   width: 100%;
   padding: 5% 10%;
@@ -118,24 +133,23 @@ button:hover {
   color: #fff;
   font-size: 2rem;
   text-align: left;
-
+  border: var(--blue);
 }
 
-.PlusIcon{
+.PlusIcon {
   padding-right: 5%;
 }
 
-
-.WorkoutsToDo{
-  width:100%;
+.WorkoutsToDo {
+  width: 100%;
   padding: 5% 0%;
   display: flex;
   flex-direction: column;
 }
 
-.Workout{
+.Workout {
   background-color: white;
-  color:#212121;
+  color: #212121;
   padding: 2%;
   border-radius: 20px;
   margin-bottom: 3%;
@@ -144,3 +158,105 @@ button:hover {
   justify-content: space-around;
 }
 
+.NewWorkout {
+  display: none;
+  top: 5%;
+  left: 15%;
+  position: fixed;
+  text-align: center;
+  width: 70%;
+  height: 80%;
+
+  border: 0.1px solid gray;
+  background-color: var(--black);
+  border-radius: 0.8%;
+}
+
+.Categories {
+  width: 80%;
+  margin: auto;
+  background-color: var(--blue);
+  display: flex;
+  font-size: 1.5rem;
+  border-radius: 20px;
+}
+
+
+
+.CategoriesTextBox {
+  position: fixed;
+  display: flex;
+  width: 50%;
+  left:45%;
+}
+
+.CategoriesText{
+  padding: 0% 5%;
+}
+
+.ExercisesTitleText{
+  width:100%;
+  padding-left: 50%;
+}
+
+/* new exercice*/
+
+.NewExercise{
+  display: flex;
+}
+
+.NewExerciseBox{
+  width: 80%;
+  margin: auto;
+  border: 2px solid white;
+  display: flex;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  padding: 20px 0px;
+  margin-top: 2%;
+  margin-bottom: 0%;
+}
+
+.NewExerciseTextBox {
+  display: flex;
+  position: fixed;
+  width: 50%;
+  left: 45%;
+}
+
+.NewExerciseText{
+  padding: 0% 6%;
+  color: white;
+  background: none;
+  border: none;
+  width: 5%;
+  font-size: 1.5rem;
+}
+
+
+.ExerciseName{
+  width:100%;
+  color: white;
+  background: none;
+  border: none;
+  width: 70%;
+  font-size: 1.5rem;
+}
+
+.CloseButton{
+  color: red;
+  font-size: 2rem;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left:90%;
+  background: none;
+}
+
+.EditButton {
+  color: var(--blue);
+  width: 7%;
+  height: 100%;
+  padding: 2% 0%;
+  border: 1px solid var(--blue);
+  border-radius: 50px;
+}

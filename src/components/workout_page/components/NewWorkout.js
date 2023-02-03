@@ -1,6 +1,7 @@
 import React from "react";
 import NewExercise from "./NewExercise";
 
+
 function Categories() {
   return (
     <div className="Categories">
@@ -30,10 +31,12 @@ function CloseButton() {
 function SaveButton() {
   return (
     <div>
-      <button className="SaveButton">Save</button>
+      <button className="SaveButton" onClick={CloseWorkouts}>Save</button>
     </div>
   );
 }
+
+
 
 function AddButton() {
   return (

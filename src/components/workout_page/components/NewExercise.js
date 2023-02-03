@@ -2,27 +2,19 @@ import React from "react";
 import { useState } from "react";
 
 
-function setEdit(){
-  alert("hello")
-}
 
 function NewExercise() {
   const allInputBoxes = document.getElementsByClassName("NewExerciseText");
-  let workoutNames = ["Bench Press", "Squats", "Deadlift"];
+  let ExercisesNames = ["Bench", "Squats", "Deadlift"];
   let idx = 0;
 
   const [weight, SetWeight] = useState(10);
-  const [name, SetName] = useState(workoutNames[idx]);
+  const [name, SetName] = useState(ExercisesNames[idx]);
   const [reps, SetReps] = useState(10);
-  const [sets, SetSets] = useState(10);
+  const [sets, SetSets] = useState(3);
   const [restTime, SetRest] = useState(60); // in seconds
 
-  function handelEdit(){
-    for (let index = 0; index < allInputBoxes.length; index++) {
-      let inputs = allInputBoxes[index].children;
-      inputs.readOnly = false;
-    }
-  }
+
 
   return (
     <div className="NewExercise">
@@ -31,38 +23,49 @@ function NewExercise() {
           <input
             className="ExerciseName"
             required="required"
-            defaultValue={name}
+            type="text"
+            value={name}
             readOnly={false}
+            onChange={(e) => {SetName(e.target.value)}}
           />
         </div>
         <div className="NewExerciseTextBox">
           <input
             className="NewExerciseText"
+            type="number"
             required="required"
-            defaultValue={weight}
+            value={weight}
             readOnly={false}
+            onChange={(e) => {SetWeight(e.target.value)}}
           />
           <input
             className="NewExerciseText"
             required="required"
-            defaultValue={reps}
+            type="number"
+            value={reps}
             readOnly={false}
+            onChange={(e) => {SetReps(e.target.value)}}
           />
           <input
             className="NewExerciseText"
             required="required"
-            defaultValue={sets}
+            type="number"
+            value={sets}
             readOnly={false}
+            onChange={(e) => {SetSets(e.target.value)}}
           />
           <input
             className="NewExerciseText"
             required="required"
-            defaultValue={restTime}
+            value={restTime}
+            type="number"
             readOnly={false}
+            step="5"
+            onChange={(e) => {SetRest(e.target.value)}}
           />
         </div>
       </div>
-      <button type="button" className="EditButton" onClick={handelEdit}>
+      <button type="button" className="EditButton">
         Edit
       </button>
     </div>

@@ -1,6 +1,31 @@
 import React from "react";
 
-function CreateNewWorkout() {
+
+class Workout {
+  constructor(name, desc) {
+    this.name = name;
+    this.desc = desc;
+    this.exercises = [];
+    this.isIsFinished = false;
+  }
+  getName(){
+    return(this.name)
+  }
+  AddExercise(exercise){
+    this.exercises.push(exercise)
+  }
+  getExercises(){
+    return this.exercises
+  }
+}
+
+let workout1 = new Workout("Bench", "Medium dificulity") ;
+let workout2 = new Workout("Push", "Core strength") ;
+let workout3 = new Workout("Pull", "Back training");
+
+let allWorkouts = [workout1, workout2, workout3];
+
+function CreateNewWorkoutComponent() {
   return (
     <div>
       <button className="CreateNewWorkout" onClick={OpenWorkouts}>
@@ -16,7 +41,7 @@ function OpenWorkouts() {
   CreateWorkoutModal.style.display = "block";
 }
 
-function Workout(props) {
+function WorkoutComponent(props) {
   return (
     <div className="Workout">
       <h3>{props.name}</h3>
@@ -31,11 +56,12 @@ function Workout(props) {
 function WorkoutBox() {
   return (
     <div className="WorkoutBox">
-      <CreateNewWorkout />
+      <CreateNewWorkoutComponent />
       <div className="WorkoutsToDo">
-        <Workout name="Push" desc="Workout Description" />
-        <Workout name="Push" desc="Easy chill workout" />
-        <Workout name="Push" desc="some random text" />
+        <WorkoutComponent name={allWorkouts[0].getName()} desc={allWorkouts[0].desc} />
+        <WorkoutComponent name={allWorkouts[1].getName()} desc={allWorkouts[1].desc} />
+        <WorkoutComponent name={allWorkouts[2].getName()} desc={allWorkouts[2].desc} />
+        
       </div>
     </div>
   );

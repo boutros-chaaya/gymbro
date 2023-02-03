@@ -11,7 +11,7 @@ function Categories() {
         <p className="CategoriesText">Weight</p>
         <p className="CategoriesText">Reps</p>
         <p className="CategoriesText">Sets</p>
-        <p className="CategoriesText">Rest</p>
+        <p className="RestText">Rest (s)</p>
       </div>
     </div>
   );
@@ -27,6 +27,22 @@ function CloseButton() {
   );
 }
 
+function SaveButton() {
+  return (
+    <div>
+      <button className="SaveButton">Save</button>
+    </div>
+  );
+}
+
+function AddButton() {
+  return (
+    <div>
+      <button className="AddButton">+</button>
+    </div>
+  );
+}
+
 function CloseWorkouts() {
   const CreateWorkoutModal = document.querySelector(".NewWorkout");
   CreateWorkoutModal.style.display = "none";
@@ -37,9 +53,15 @@ function NewWorkout() {
     <div className="NewWorkout">
       <CloseButton />
       <Categories />
-      <NewExercise/>
-      <NewExercise/>
-      <NewExercise/>
+      <div className="NewExercisesBox">
+      <NewExercise />
+      </div>
+      <br />
+      <div className="BottomButtons">
+        <AddButton />
+        <br/>
+        <SaveButton />
+      </div>
     </div>
   );
 }

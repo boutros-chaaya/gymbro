@@ -4,7 +4,7 @@ function CreateNewWorkout() {
   return (
     <div>
       <button className="CreateNewWorkout" onClick={OpenWorkouts}>
-        <icon className="PlusIcon">+</icon>
+        <span className="PlusIcon">+</span>
         Create New Workout
       </button>
     </div>

@@ -1,7 +1,13 @@
 import React from "react";
 import { useState } from "react";
 
+
+function setEdit(){
+  alert("hello")
+}
+
 function NewExercise() {
+  const allInputBoxes = document.getElementsByClassName("NewExerciseText");
   let workoutNames = ["Bench Press", "Squats", "Deadlift"];
   let idx = 0;
 
@@ -11,6 +17,13 @@ function NewExercise() {
   const [sets, SetSets] = useState(10);
   const [restTime, SetRest] = useState(60); // in seconds
 
+  function handelEdit(){
+    for (let index = 0; index < allInputBoxes.length; index++) {
+      let inputs = allInputBoxes[index].children;
+      inputs.readOnly = false;
+    }
+  }
+
   return (
     <div className="NewExercise">
       <div className="NewExerciseBox">
@@ -19,7 +32,7 @@ function NewExercise() {
             className="ExerciseName"
             required="required"
             defaultValue={name}
-            readOnly={true}
+            readOnly={false}
           />
         </div>
         <div className="NewExerciseTextBox">
@@ -27,29 +40,31 @@ function NewExercise() {
             className="NewExerciseText"
             required="required"
             defaultValue={weight}
-            readOnly={true}
+            readOnly={false}
           />
           <input
             className="NewExerciseText"
             required="required"
             defaultValue={reps}
-            readOnly={true}
+            readOnly={false}
           />
           <input
             className="NewExerciseText"
             required="required"
             defaultValue={sets}
-            readOnly={true}
+            readOnly={false}
           />
           <input
             className="NewExerciseText"
             required="required"
             defaultValue={restTime}
-            readOnly={true}
+            readOnly={false}
           />
         </div>
       </div>
-      <button className="EditButton">Edit</button>
+      <button type="button" className="EditButton" onClick={handelEdit}>
+        Edit
+      </button>
     </div>
   );
 }

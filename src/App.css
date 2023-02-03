@@ -191,7 +191,10 @@ button:hover {
 }
 
 .CategoriesText{
-  padding: 0% 5%;
+  padding: 0% 4.5%;
+}
+.RestText{
+  padding: 0% 4%;
 }
 
 .ExercisesTitleText{
@@ -215,6 +218,7 @@ button:hover {
   padding: 20px 0px;
   margin-top: 2%;
   margin-bottom: 0%;
+  margin-left: 10%;
 }
 
 .NewExerciseTextBox {
@@ -253,10 +257,36 @@ button:hover {
 }
 
 .EditButton {
+  margin: auto;
   color: var(--blue);
-  width: 7%;
-  height: 100%;
-  padding: 2% 0%;
+  width: 5%;
+  height: 0%;
+  padding: 1% 0%;
   border: 1px solid var(--blue);
   border-radius: 50px;
+  display: none;
+}
+
+.BottomButtons{
+  display: flex;
+  justify-content: space-around;
+  padding: 3% 0%;
+}
+
+
+.SaveButton {
+  margin: auto;
+  color: white;
+  background-color: var(--blue);
+  width: 300%;
+  height: 120%;
+  border-radius: 50px;
+}
+
+.AddButton {
+  margin: auto;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 50px;
+  font-size: 1.7rem;
 }

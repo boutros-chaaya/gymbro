@@ -3,20 +3,14 @@ import { useState } from "react";
 import NewExercise from "./NewExercise";
 import {
   CloseButton,
+  CloseWorkouts,
   Categories,
   AddButton,
   SaveButton,
-  NewWorkoutInput
+  NewWorkoutInput,
 } from "./ButtonsFunctionsNewWorkout";
 
-function CloseWorkouts() {
-  const CreateWorkoutModal = document.querySelector(".NewWorkout");
-  CreateWorkoutModal.style.display = "none";
-}
-
-let allNewExercises = [];
-
-function CreateNewWorkout(props) {
+function EditWorkout(props) {
   let ExercisesNames = ["Bench", "Squats", "Deadlift"];
   let idx = 0;
 
@@ -41,15 +35,11 @@ function CreateNewWorkout(props) {
   };
 
   const addExercise = () => {
-    let currentData = props.data;
+    let currentData = exerciseId;
 
-    if (props.data.length < 4) {
+    if (exerciseId.length < 4) {
       currentData.push(exerciseId.length);
-      props.setData({
-        name: workoutName,
-        desc: workoutDesc,
-        exercises: currentData,
-      });
+      setExersiceId(currentData);
       setCheat(exerciseId.length);
       console.log(isSaved);
     }
@@ -66,27 +56,8 @@ function CreateNewWorkout(props) {
     }
   };
 
-  const saveData = () => {
-    props.addData(exerciseData);
-    props.SetName(workoutName)
-    props.SetDesc(workoutDesc)
-
-    CloseWorkouts();
-    console.log(exerciseData)
-    console.log(workoutName, workoutDesc)
-    //reset states
-    SetWeight(10);
-    SetName(ExercisesNames[idx]);
-    SetReps(10)
-    SetSets(3)
-    SetRest(60)
-    setExersiceId([1])
-  };
-
-  
-
   return (
-    <div className="NewWorkout">
+    <div className="EditWorkout">
       <CloseButton />
       <NewWorkoutInput
         workoutName={workoutName}
@@ -95,34 +66,9 @@ function CreateNewWorkout(props) {
         workoutDesc={workoutDesc}
       />
       <Categories />
-      <div className="NewExercisesBox">
-        <NewExercise
-          saveExerciseParams={updateexerciseData}
-          removeExerciseParams={removeExercise}
-          data={props.data}
-          name={name}
-          weight={weight}
-          reps={reps}
-          sets={sets}
-          restTime={restTime}
-          isSaved={isSaved}
-          ExercisesNames={ExercisesNames}
-          SetName={SetName}
-          SetWeight={SetWeight}
-          SetReps={SetReps}
-          SetSets={SetSets}
-          SetRest={SetRest}
-          SetSave={SetSave}
-        />
-      </div>
-      <br />
-      <div className="BottomButtons">
-        <AddButton addButtonCallback={addExercise} />
-        <br />
-        <SaveButton saveButtonCallback={saveData} />
-      </div>
+      
     </div>
   );
 }
 
-export { CreateNewWorkout, allNewExercises };
+export default EditWorkout;

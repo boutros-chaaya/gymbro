@@ -14,6 +14,11 @@ function OpenWorkouts() {
   CreateWorkoutModal.style.display = "block";
 }
 
+function OpenEditWorkout() {
+  const CreateWorkoutModal = document.querySelector(".NewWorkout");
+  CreateWorkoutModal.style.display = "block";
+}
+
 function WorkoutComponent(props) {
 
   const startButtonPressed = () => {
@@ -49,7 +54,7 @@ function WorkoutComponent(props) {
           <h3>{item.name}</h3>
           <p>{item.desc}</p>
           <button className="Button" onClick={startButtonPressed}>Start</button>
-          <button className="Button"onClick={modifyButtonPressed}>Modify</button>
+          <button className="Button"onClick={OpenWorkouts}>Modify</button>
           <button className="TransparentButton" onClick={deleteButtonPressed}>Delete</button>
         </div>
         )
@@ -58,4 +63,4 @@ function WorkoutComponent(props) {
   );
 }
 
-export { CreateNewWorkoutComponent, OpenWorkouts, WorkoutComponent };
+export { CreateNewWorkoutComponent, OpenWorkouts, WorkoutComponent, OpenEditWorkout };

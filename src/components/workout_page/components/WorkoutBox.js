@@ -9,7 +9,7 @@ import {
 function WorkoutBox() {
   const [value, setValue] = useState(0); // integer state
   const [name, SetName] = useState("Push");
-  const [desc, SetDesc] = useState("Medium Dificulity");
+  const [desc, SetDesc] = useState("Medium dificulity");
   const [exersices, SetExersices] = useState([
     {
       name: "Bench",
@@ -19,9 +19,10 @@ function WorkoutBox() {
       rest: 60,
     },
   ]);
+  const [workoutId, setWorkoutID] = useState(0)
 
   const [AllWorkouts, SetAllWorkouts] = useState([
-    { name: name, desc: desc, exersices: exersices },
+    { id:workoutId, name: "Workout 1", desc: "Core strength", exersices: exersices },
   ]);
 
   const forceUpdate = () => {
@@ -30,18 +31,22 @@ function WorkoutBox() {
 
   const updateWorkoutData = (exercises) => {
     let currentData = AllWorkouts;
-    currentData.push({ name: name, desc: desc, exersices: exercises });
+    SetName(name)
+    SetDesc(desc)
+    setWorkoutID(workoutId + 1)
+    currentData.push({ id:workoutId, name: name, desc: desc, exersices: exercises });
     SetAllWorkouts(currentData);
     console.log(AllWorkouts);
     forceUpdate();
   };
 
-  const removeWorkout = (workout) => {
+  const removeWorkout = () => {
     let currentData = AllWorkouts;
-
+    console.log(currentData)
     if (AllWorkouts.length > 0) {
-      currentData.splice(AllWorkouts.indexOf(workout), 1);
+      currentData.splice(currentData['id'], 1);
       SetAllWorkouts(currentData);
+      forceUpdate()
     }
   };
 
@@ -54,7 +59,7 @@ function WorkoutBox() {
         SetDesc={SetDesc}
       />
       <div className="WorkoutsToDo">
-        <WorkoutComponent data={AllWorkouts} />
+        <WorkoutComponent data={AllWorkouts} deleteWorkout={removeWorkout} />
       </div>
     </div>
   );

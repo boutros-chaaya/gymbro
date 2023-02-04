@@ -15,6 +15,32 @@ function OpenWorkouts() {
 }
 
 function WorkoutComponent(props) {
+
+  const startButtonPressed = () => {
+    props.startWorkout({
+      workoutName: props.workoutName,
+      workoutDesc: props.workoutDesc,
+      exercises: props.exersices,
+    });
+  };
+
+  const modifyButtonPressed = () => {
+    props.modifyWorkout({
+      workoutName: props.workoutName,
+      workoutDesc: props.workoutDesc,
+      exercises: props.exersices,
+    });
+  };
+
+  const deleteButtonPressed = () => {
+    props.deleteWorkout({
+      id: props.workoutId,
+      workoutName: props.workoutName,
+      workoutDesc: props.workoutDesc,
+      exercises: props.exersices,
+    });
+  };
+
   return (
     <div>
       {props.data.map((item) => {
@@ -22,9 +48,9 @@ function WorkoutComponent(props) {
         <div className="Workout">
           <h3>{item.name}</h3>
           <p>{item.desc}</p>
-          <button className="Button">Start</button>
-          <button className="Button">Modify</button>
-          <button className="TransparentButton">Delete</button>
+          <button className="Button" onClick={startButtonPressed}>Start</button>
+          <button className="Button"onClick={modifyButtonPressed}>Modify</button>
+          <button className="TransparentButton" onClick={deleteButtonPressed}>Delete</button>
         </div>
         )
       })}

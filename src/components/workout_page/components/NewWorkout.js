@@ -65,7 +65,10 @@ function CreateNewWorkout(props) {
   const saveData = () => {
     props.addData(exerciseData);
     CloseWorkouts();
-
+    console.log(exerciseData)
+    console.log(workoutName, workoutDesc)
+    props.SetName(workoutName)
+    props.SetDesc(workoutDesc)
     //reset states
     SetWeight(10);
     SetName(ExercisesNames[idx]);

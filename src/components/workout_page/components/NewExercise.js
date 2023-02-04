@@ -1,73 +1,111 @@
 import React from "react";
-import { useState } from "react";
 
+function NewExercise(props) {
+  const saveButtonPressed = () => {
+    props.saveExerciseParams({
+      name: props.name,
+      weight: props.weight,
+      reps: props.reps,
+      sets: props.sets,
+      rest: props.restTime,
+    });
+  };
 
-
-function NewExercise() {
-  const allInputBoxes = document.getElementsByClassName("NewExerciseText");
-  let ExercisesNames = ["Bench", "Squats", "Deadlift"];
-  let idx = 0;
-
-  const [weight, SetWeight] = useState(10);
-  const [name, SetName] = useState(ExercisesNames[idx]);
-  const [reps, SetReps] = useState(10);
-  const [sets, SetSets] = useState(3);
-  const [restTime, SetRest] = useState(60); // in seconds
-
-
+  const removeButtonPressed = () => {
+    props.removeExerciseParams({
+      name: props.name,
+      weight: props.weight,
+      reps: props.reps,
+      sets: props.sets,
+      rest: props.restTime,
+    });
+  };
 
   return (
-    <div className="NewExercise">
-      <div className="NewExerciseBox">
-        <div>
-          <input
-            className="ExerciseName"
-            required="required"
-            type="text"
-            value={name}
-            readOnly={false}
-            onChange={(e) => {SetName(e.target.value)}}
-          />
-        </div>
-        <div className="NewExerciseTextBox">
-          <input
-            className="NewExerciseText"
-            type="number"
-            required="required"
-            value={weight}
-            readOnly={false}
-            onChange={(e) => {SetWeight(e.target.value)}}
-          />
-          <input
-            className="NewExerciseText"
-            required="required"
-            type="number"
-            value={reps}
-            readOnly={false}
-            onChange={(e) => {SetReps(e.target.value)}}
-          />
-          <input
-            className="NewExerciseText"
-            required="required"
-            type="number"
-            value={sets}
-            readOnly={false}
-            onChange={(e) => {SetSets(e.target.value)}}
-          />
-          <input
-            className="NewExerciseText"
-            required="required"
-            value={restTime}
-            type="number"
-            readOnly={false}
-            step="5"
-            onChange={(e) => {SetRest(e.target.value)}}
-          />
-        </div>
-      </div>
-      <button type="button" className="EditButton">
-        Edit
-      </button>
+    <div>
+      {props.data.map(() => {
+        return (
+          <div className="NewExercise">
+            <button
+              type="button"
+              className="ExerciseDeleteButton"
+              onClick={removeButtonPressed}
+            >
+              -
+            </button>
+            <div className="NewExerciseBox">
+              <div>
+                <select
+                  className="SelectExerciseName"
+                  onChange={(e) => {
+                    props.SetName(e.target.value);
+                  }}
+                >
+                  <option value={props.ExercisesNames[0]} selected>
+                    {props.ExercisesNames[0]}
+                  </option>
+                  <option value={props.ExercisesNames[1]}>
+                    {props.ExercisesNames[1]}
+                  </option>
+                  <option value={props.ExercisesNames[2]}>
+                    {props.ExercisesNames[2]}
+                  </option>
+                </select>
+              </div>
+              <div className="NewExerciseTextBox">
+                <input
+                  className="NewExerciseText"
+                  type="number"
+                  required="required"
+                  value={props.weight}
+                  readOnly={false}
+                  onChange={(e) => {
+                    props.SetWeight(e.target.value);
+                  }}
+                />
+                <input
+                  className="NewExerciseText"
+                  required="required"
+                  type="number"
+                  value={props.reps}
+                  readOnly={false}
+                  onChange={(e) => {
+                    props.SetReps(e.target.value);
+                  }}
+                />
+                <input
+                  className="NewExerciseText"
+                  required="required"
+                  type="number"
+                  value={props.sets}
+                  readOnly={false}
+                  onChange={(e) => {
+                    props.SetSets(e.target.value);
+                  }}
+                />
+                <input
+                  className="NewExerciseText"
+                  required="required"
+                  value={props.restTime}
+                  type="number"
+                  readOnly={false}
+                  step="5"
+                  onChange={(e) => {
+                    props.SetRest(e.target.value);
+                  }}
+                />
+              </div>
+            </div>
+            <button
+              type="button"
+              className="ExerciseSaveButton"
+              onClick={saveButtonPressed}
+            >
+              Save
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 }

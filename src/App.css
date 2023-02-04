@@ -160,14 +160,13 @@ button:hover {
 
 .NewWorkout {
   display: none;
-  top: 5%;
-  left: 15%;
   position: fixed;
+  margin:auto;
+  top:0%;
+  left:0%;
   text-align: center;
-  width: 70%;
-  height: 80%;
-
-  border: 0.1px solid gray;
+  width: 100%;
+  height: 100%;
   background-color: var(--black);
   border-radius: 0.8%;
 }
@@ -187,7 +186,7 @@ button:hover {
   position: fixed;
   display: flex;
   width: 50%;
-  left:45%;
+  left:53%;
 }
 
 .CategoriesText{
@@ -225,7 +224,7 @@ button:hover {
   display: flex;
   position: fixed;
   width: 50%;
-  left: 45%;
+  left: 53%;
 }
 
 .NewExerciseText{
@@ -238,25 +237,25 @@ button:hover {
 }
 
 
-.ExerciseName{
-  width:100%;
+.SelectExerciseName{
   color: white;
-  background: none;
+  background-color: var(--black);
   border: none;
-  width: 70%;
+  width: 100%;
   font-size: 1.5rem;
+  margin-left: 40%;
 }
 
 .CloseButton{
   color: red;
   font-size: 2rem;
   margin-top: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 0%;
   margin-left:90%;
   background: none;
 }
 
-.EditButton {
+.ExerciseSaveButton {
   margin: auto;
   color: var(--blue);
   width: 5%;
@@ -264,8 +263,21 @@ button:hover {
   padding: 1% 0%;
   border: 1px solid var(--blue);
   border-radius: 50px;
-  display: none;
+  display: block;
 }
+
+.ExerciseDeleteButton {
+  position: fixed;
+  margin-left: 2%;
+  margin-top: 3%;
+  padding: 0% 1%;
+  color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 50px;
+  font-size: 1.7rem;
+  font-weight: bolder;
+}
+
 
 .BottomButtons{
   display: flex;
@@ -289,4 +301,23 @@ button:hover {
   border: 1px solid var(--blue);
   border-radius: 50px;
   font-size: 1.7rem;
+}
+
+.temptext{
+  color: white;
+}
+
+
+.NewWorkoutInputs{
+  font-size: 1.3rem;
+  padding: 2% 5%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.NewWorkoutInput{
+  color:#fff;
+  background-color: var(--black);
+  font-size: 1.3rem;
+  width: 110%;
 }

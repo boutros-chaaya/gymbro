@@ -1,67 +1,60 @@
 import React from "react";
-
-
-class Workout {
-  constructor(name, desc) {
-    this.name = name;
-    this.desc = desc;
-    this.exercises = [];
-    this.isIsFinished = false;
-  }
-  getName(){
-    return(this.name)
-  }
-  AddExercise(exercise){
-    this.exercises.push(exercise)
-  }
-  getExercises(){
-    return this.exercises
-  }
-}
-
-let workout1 = new Workout("Bench", "Medium dificulity") ;
-let workout2 = new Workout("Push", "Core strength") ;
-let workout3 = new Workout("Pull", "Back training");
-
-let allWorkouts = [workout1, workout2, workout3];
-
-function CreateNewWorkoutComponent() {
-  return (
-    <div>
-      <button className="CreateNewWorkout" onClick={OpenWorkouts}>
-        <span className="PlusIcon">+</span>
-        Create New Workout
-      </button>
-    </div>
-  );
-}
-
-function OpenWorkouts() {
-  const CreateWorkoutModal = document.querySelector(".NewWorkout");
-  CreateWorkoutModal.style.display = "block";
-}
-
-function WorkoutComponent(props) {
-  return (
-    <div className="Workout">
-      <h3>{props.name}</h3>
-      <p>{props.desc}</p>
-      <button className="Button">Start</button>
-      <button className="Button">Modify</button>
-      <button className="TransparentButton">Delete</button>
-    </div>
-  );
-}
+import { useState } from "react";
+import { CreateNewWorkout } from "./NewWorkout";
+import {
+  CreateNewWorkoutComponent,
+  WorkoutComponent,
+} from "./WorkoutComponents";
 
 function WorkoutBox() {
+  const [value, setValue] = useState(0); // integer state
+  const [name, SetName] = useState("Push");
+  const [desc, SetDesc] = useState("Medium Dificulity");
+  const [exersices, SetExersices] = useState([
+    {
+      name: "Bench",
+      weight: 5,
+      reps: 10,
+      sets: 3,
+      rest: 60,
+    },
+  ]);
+
+  const [AllWorkouts, SetAllWorkouts] = useState([
+    { name: name, desc: desc, exersices: exersices },
+  ]);
+
+  const forceUpdate = () => {
+    setValue(value + 1);
+  };
+
+  const updateWorkoutData = (exercises) => {
+    let currentData = AllWorkouts;
+    currentData.push({ name: name, desc: desc, exersices: exercises });
+    SetAllWorkouts(currentData);
+    console.log(AllWorkouts);
+    forceUpdate();
+  };
+
+  const removeWorkout = (workout) => {
+    let currentData = AllWorkouts;
+
+    if (AllWorkouts.length > 0) {
+      currentData.splice(AllWorkouts.indexOf(workout), 1);
+      SetAllWorkouts(currentData);
+    }
+  };
+
   return (
     <div className="WorkoutBox">
       <CreateNewWorkoutComponent />
+      <CreateNewWorkout
+        addData={updateWorkoutData}
+        SetName={SetName}
+        SetDesc={SetDesc}
+      />
       <div className="WorkoutsToDo">
-        <WorkoutComponent name={allWorkouts[0].getName()} desc={allWorkouts[0].desc} />
-        <WorkoutComponent name={allWorkouts[1].getName()} desc={allWorkouts[1].desc} />
-        <WorkoutComponent name={allWorkouts[2].getName()} desc={allWorkouts[2].desc} />
-        
+        <WorkoutComponent data={AllWorkouts} />
       </div>
     </div>
   );

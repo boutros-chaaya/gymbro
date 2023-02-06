@@ -54,8 +54,10 @@ function AddButton(props) {
 function CloseWorkouts() {
   const CreateWorkoutModal = document.querySelector(".NewWorkout");
   const EditWorkoutModal = document.querySelector(".EditWorkout");
+  const StartWorkoutModal = document.querySelector(".StartWorkout");
   CreateWorkoutModal.style.display = "none";
   EditWorkoutModal.style.display = "none";
+  StartWorkoutModal.style.display = "none";
 }
 
 function NewWorkoutInput(props) {

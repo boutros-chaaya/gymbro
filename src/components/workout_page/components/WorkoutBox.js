@@ -1,13 +1,13 @@
 import React from "react";
 import { useState } from "react";
-import EditWorkout from "./StartWorkout";
 import { CreateNewWorkout } from "./NewWorkout";
 import {
   CreateNewWorkoutComponent,
   OpenEditWorkout,
   WorkoutComponent,
-  OpenWorkouts
+  OpenWorkouts,
 } from "./WorkoutComponents";
+import StartWorkout from "./StartWorkout";
 
 function WorkoutBox() {
   const [value, setValue] = useState(0); // integer state
@@ -61,7 +61,6 @@ function WorkoutBox() {
     }
   };
 
-
   const updateWorkoutData = (exercises) => {
     let currentData = AllWorkouts;
     SetName(name);
@@ -79,8 +78,6 @@ function WorkoutBox() {
     forceUpdate();
   };
 
-
-
   const removeWorkout = () => {
     let currentData = AllWorkouts;
     console.log(currentData);
@@ -96,6 +93,11 @@ function WorkoutBox() {
     OpenWorkouts();
   };
 
+  const startWorkout = () => {
+    const StartWorkoutModal = document.querySelector(".StartWorkout");
+    StartWorkoutModal.style.display = "block";
+  };
+
   return (
     <div className="WorkoutBox">
       <CreateNewWorkoutComponent />
@@ -103,8 +105,8 @@ function WorkoutBox() {
         addData={updateWorkoutData}
         SetName={SetName}
         SetDesc={SetDesc}
-        data = {exercises}
-        setData = {setWorkoutInfo}
+        data={exercises}
+        setData={setWorkoutInfo}
       />
 
       <div className="WorkoutsToDo">
@@ -112,9 +114,10 @@ function WorkoutBox() {
           data={AllWorkouts}
           modifyWorkout={editWorkout}
           deleteWorkout={removeWorkout}
+          startWorkout={startWorkout}
         />
+        <StartWorkout workoutName={name} exercises={exercises}/>
       </div>
-
     </div>
   );
 }

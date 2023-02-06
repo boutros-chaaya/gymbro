@@ -1,6 +1,7 @@
 :root {
   --blue: #1053a7;
   --black: #212121;
+  --white: #fff;
 }
 
 body {
@@ -36,6 +37,13 @@ body {
   }
 }
 
+.HomePage {
+  background-image: url("./images/homepagebg.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
 header {
   padding: 10px;
 }
@@ -59,10 +67,20 @@ h2 {
   justify-content: space-around;
 }
 
+.WelcomeText {
+  position: fixed;
+  top: 15%;
+  left: 15%;
+  font-size: 1.5rem;
+}
+
 .HomeButton {
+  position: fixed;
+  left: 20%;
+  top: 50%;
   border-radius: 10%;
   margin: auto;
-  padding: 50px 40px;
+  padding: 60px 70px;
   color: #fff;
   background-color: var(--blue);
   opacity: 1;
@@ -71,9 +89,12 @@ h2 {
 }
 
 .WhiteHomeButton {
+  position: fixed;
+  left: 38%;
+  top: 50%;
   border-radius: 10%;
   margin: auto;
-  padding: 50px 40px;
+  padding: 60px 70px;
   color: var(--blue);
   background-color: #fff;
   opacity: 1;
@@ -81,7 +102,7 @@ h2 {
   font-weight: bolder;
 }
 
-button{
+button {
   border: none;
 }
 
@@ -104,7 +125,7 @@ button:hover {
 
 .TransparentButton {
   color: var(--blue);
-  
+
   width: 13%;
   height: 100%;
   padding: 2% 0%;
@@ -161,9 +182,9 @@ button:hover {
 .NewWorkout {
   display: none;
   position: fixed;
-  margin:auto;
-  top:0%;
-  left:0%;
+  margin: auto;
+  top: 0%;
+  left: 0%;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -171,12 +192,12 @@ button:hover {
   border-radius: 0.8%;
 }
 
-.EditWorkout {
+.StartWorkout {
   display: none;
   position: fixed;
-  margin:auto;
-  top:0%;
-  left:0%;
+  margin: auto;
+  top: 0%;
+  left: 0%;
   text-align: center;
   width: 100%;
   height: 100%;
@@ -193,34 +214,32 @@ button:hover {
   border-radius: 20px;
 }
 
-
-
 .CategoriesTextBox {
   position: fixed;
   display: flex;
   width: 50%;
-  left:53%;
+  left: 53%;
 }
 
-.CategoriesText{
+.CategoriesText {
   padding: 0% 4.5%;
 }
-.RestText{
+.RestText {
   padding: 0% 4%;
 }
 
-.ExercisesTitleText{
-  width:100%;
+.ExercisesTitleText {
+  width: 100%;
   padding-left: 50%;
 }
 
 /* new exercice*/
 
-.NewExercise{
+.NewExercise {
   display: flex;
 }
 
-.NewExerciseBox{
+.NewExerciseBox {
   width: 80%;
   margin: auto;
   border: 2px solid white;
@@ -240,7 +259,7 @@ button:hover {
   left: 53%;
 }
 
-.NewExerciseText{
+.NewExerciseText {
   padding: 0% 6%;
   color: white;
   background: none;
@@ -249,8 +268,7 @@ button:hover {
   font-size: 1.3rem;
 }
 
-
-.SelectExerciseName{
+.SelectExerciseName {
   color: white;
   background-color: var(--black);
   border: none;
@@ -259,12 +277,12 @@ button:hover {
   margin-left: 40%;
 }
 
-.CloseButton{
+.CloseButton {
   color: red;
   font-size: 2rem;
   margin-top: 2%;
   margin-bottom: 0%;
-  margin-left:90%;
+  margin-left: 90%;
   background: none;
 }
 
@@ -291,13 +309,11 @@ button:hover {
   font-weight: bolder;
 }
 
-
-.BottomButtons{
+.BottomButtons {
   display: flex;
   justify-content: space-around;
   padding: 3% 0%;
 }
-
 
 .SaveButton {
   margin: auto;
@@ -316,21 +332,167 @@ button:hover {
   font-size: 1.7rem;
 }
 
-.temptext{
+.temptext {
   color: white;
 }
 
-
-.NewWorkoutInputs{
+.NewWorkoutInputs {
   font-size: 1.3rem;
   padding: 2% 5%;
   display: flex;
   justify-content: space-around;
 }
 
-.NewWorkoutInput{
-  color:#fff;
+.NewWorkoutInput {
+  color: #fff;
   background-color: var(--black);
   font-size: 1.3rem;
   width: 110%;
 }
+
+.StartWorkoutHeader {
+  background-color: var(--blue);
+  padding: 1% 1%;
+  margin: auto;
+  width: 90%;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 1rem;
+  border: var(--blue);
+}
+
+.StartWorkoutTitle {
+  font-weight: bolder;
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.cats {
+  text-align: left;
+}
+
+.StartWorkoutButton {
+  margin: auto;
+  color: var(--blue);
+  background-color: var(--white);
+  padding: 0.5% 3%;
+  border-radius: 50px;
+  position: fixed;
+  top: 19%;
+  left: 85%;
+}
+
+.ExerciseToDo {
+  background-color: var(--white);
+  color: var(--blue);
+  width: 80%;
+  margin: auto;
+  border: 2px solid white;
+  display: flex;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  padding: 20px 0px;
+}
+
+.FinishWorkoutButton {
+  margin: auto;
+  color: var(--white);
+  background-color: var(--blue);
+  padding: 0.5% 5%;
+  border-radius: 50px;
+  margin-top: 5%;
+}
+
+.CompletedWokoutsBox {
+  padding: 2%;
+  display: flex;
+  justify-content: space-between;
+  height: 60%;
+  width: 50%;
+  position: fixed;
+  top: 15%;
+  left: 5%;
+}
+
+.WorkoutBoxRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.CompletedWorkout1 {
+  background-image: url("./images/history1.jpg");
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5%;
+  border-radius: 20px;
+  position: fixed;
+}
+
+.CompletedWorkout2 {
+  background-image: url("./images/history2.jpg");
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5%;
+  border-radius: 20px;
+  position: fixed;
+  left: 23%;
+}
+
+.CompletedWorkout3 {
+  background-image: url("./images/history3.jpg");
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5%;
+  border-radius: 20px;
+  position: fixed;
+  left: 40%;
+}
+
+.CompletedWorkout4 {
+  background-image: url("./images/history4.jpg");
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5%;
+  border-radius: 20px;
+  position: fixed;
+  top: 47%;
+}
+
+.CompletedWorkout5 {
+  background-image: url("./images/history5.jpg");
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5%;
+  border-radius: 20px;
+  position: fixed;
+  top: 47%;
+  left: 24%;
+}
+
+.CompletedWorkout6 {
+  background-image: url("./images/history6.jpg");
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 5%;
+  border-radius: 20px;
+  position: fixed;
+  top: 47%;
+  left: 38%;
+}
+
+.StatsImg{
+  background-image: url("./components/history_page/components/workoutstats.jpg");
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+

@@ -3,9 +3,12 @@ import WelcomeText from "./components/WelcomeText.js"
 import BlueHomeButton from "./components/HomeButton.js";
 import WhiteHomeButton from "./components/WhiteHomeButton.js";
 
+
+//<img src="images/homepagebg.jpg" alt="bg_img" width="1920" height="1080"></img>
+
 function HomePage() {
   return (
-    <div>
+    <div className="HomePage">
       <div>
         <WelcomeText />
       </div>

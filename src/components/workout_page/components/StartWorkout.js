@@ -10,15 +10,41 @@ import {
   NewWorkoutInput,
 } from "./ButtonsFunctionsNewWorkout";
 
-function StartWorkout(props) {
-  
+const CloseWorkout = () => {
+  const StartWorkoutModal = document.querySelector(".StartWorkout");
+  StartWorkoutModal.style.display = "none";
+};
 
+function ExerciseToDo(props) {
   return (
-    <div className="EditWorkout">
-      <CloseButton />
+    <div>
+      {props.data.map(() => {
+        return (
+          <div className="ExerciseToDo">
+            <p className="ExerciseToDoName">{props.exercises[0]}</p>
+            <div className="ExerciseToDoProps">
+            <p>{props.exercises[0][0]} | {props.exercises[0][1]} | {props.exercises[0][2]}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
-      <Categories />
-      
+function StartWorkout(props) {
+  return (
+    <div className="StartWorkout">
+      <button className="CloseButton" onClick={CloseWorkout}>
+        X
+      </button>
+
+      <div className="StartWorkoutHeader">
+        <p className="StartWorkoutTitle">{props.workoutName}</p>
+        <p className="cats">Weight | Reps | Sets</p>
+        <button className="StartWorkoutButton">Start</button>
+      </div>      
+      <button className="FinishWorkoutButton" onClick={CloseWorkout}>Finish</button>
     </div>
   );
 }

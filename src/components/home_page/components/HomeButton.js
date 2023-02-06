@@ -1,6 +1,5 @@
 import React from "react";
 
-// ref: Button that User sees on home page?
 
 const BlueHomeButton = (props) => {
   const btn_name = props.btn_name;

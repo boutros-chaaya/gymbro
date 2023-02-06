@@ -489,7 +489,7 @@ button:hover {
 .StatsImg{
   background-image: url("./components/history_page/components/workoutstats.jpg");
   width: 100vw;
-  height: 100vh;
+  height: 99%;
   position: fixed;
   top: 0;
   left: 0;
